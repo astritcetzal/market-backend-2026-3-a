@@ -1,7 +1,7 @@
 package mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity;
 
 import jakarta.persistence.*;
-
+import java.util.List;
 @Entity //entidad
 @Table(name="categorias")
 public class Categoria {
@@ -14,6 +14,9 @@ public class Categoria {
     //solo se pone  @Column(name = "") si el nombre es diferencte al de la tabla
     private String descripcion;
     private boolean estado;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos;
 
     public Integer getIdCategoria() {
         return idCategoria;
