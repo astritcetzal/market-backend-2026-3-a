@@ -78,4 +78,20 @@ public class Compra {
     public void setIdCompra(Integer idCompra) {
         this.idCompra = idCompra;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProducto() {
+        return producto;
+    }
+
+    public void setProducto(List<CompraProducto> producto) {
+        this.producto = producto;
+    }
 }

@@ -18,6 +18,8 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
     //Obtener una lista de profectos filtrados por id de categoria
     // y ordenados ascendenytemente por nombre
     // sintaxis en query method
+
+    //como seria en SQL y como se implementa en java
     List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
 
     //Obtener los productos
