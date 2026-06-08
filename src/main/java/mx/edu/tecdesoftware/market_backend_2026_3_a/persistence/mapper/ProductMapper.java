@@ -23,10 +23,10 @@ public interface ProductMapper {
     })
     //este archivo traduce variables de base de datos
     Product toProduct (Producto producto);
-    List<Producto> toProduts(List<Producto> productos);
+    List<Product> toProducts(List<Producto> productos);
 
     @InheritInverseConfiguration
     @Mapping(target = "codigoBarras", ignore = true)
-    Producto toProducto(Producto product);
+    Producto toProducto(Product product);
 
 }
