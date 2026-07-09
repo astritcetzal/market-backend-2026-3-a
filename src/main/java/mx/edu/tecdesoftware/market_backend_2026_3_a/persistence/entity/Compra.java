@@ -31,7 +31,8 @@ public class Compra {
     private Cliente cliente;
 
     //una compra tiene muchos productos
-    @OneToMany(mappedBy = "id_compra")
+    //actauilizado 9-7-26
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL)
     private List<CompraProducto> producto;
 
 

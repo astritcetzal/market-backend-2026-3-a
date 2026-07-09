@@ -10,13 +10,13 @@ public class CompraProducto {
     @EmbeddedId
     //viene de nuestra clase compra productos
     private CompraProductoPK id;
-
     private Integer cantidad;
     private Double total;
     private Boolean estado;
 
     // Saber todos los productos que hay en una compra
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name="id_compra", insertable = false, updatable = false)
     private Compra compra;
     @ManyToOne
