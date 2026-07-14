@@ -26,5 +26,5 @@ public interface ProductoCrudRepository extends CrudRepository<Producto, Integer
     //de manera opcional te dará ciertos datos
     Optional<List<Producto>>findByCantidadStockLessThanAndEstado(int cantidad, boolean estado);
 
-
+    
 }

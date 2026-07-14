@@ -1,19 +1,19 @@
 package mx.edu.tecdesoftware.market_backend_2026_3_a.domain;
 
 public class Product {
-    private int productoId;
+    private Integer productoId;
     private String name;
-    private int categoryId;
+    private Integer categoryId;
     private double price;
     private int stock;
     private boolean active;
     private Category category;
 
-    public int getProductoId() {
+    public Integer getProductoId() {
         return productoId;
     }
 
-    public void setProductoId(int productoId) {
+    public void setProductoId(Integer productoId) {
         this.productoId = productoId;
     }
 
@@ -29,7 +29,7 @@ public class Product {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 

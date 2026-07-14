@@ -18,11 +18,11 @@ public class ProductService {
     public List<Product> getAll(){
         return productRepository.getAll();
     }
-    public Optional<Product> getProduct(int productId) {
+    public Optional<Product> getProduct(Integer productId) {
         return productRepository.getProduct(productId);
     }
 
-    public Optional<List<Product>> getByCategory(int categoryId){
+    public Optional<List<Product>> getByCategory(Integer categoryId){
         return productRepository.getByCategory(categoryId);
 
     }

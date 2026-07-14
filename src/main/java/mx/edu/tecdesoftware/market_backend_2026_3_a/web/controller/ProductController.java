@@ -18,13 +18,13 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
 
-    @GetMapping("")
-    public ResponseEntity<List<Product>> getAll(ProductService productService){
+    @GetMapping("/all")
+    public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProduct(@PathVariable("id") int productId){
+    public ResponseEntity<Product> getProduct(@PathVariable("id") Integer productId){
         return productService.getProduct(productId)
                 .map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
@@ -36,13 +36,13 @@ public class ProductController {
         return productService.getByCategory(categoryId).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
     //que hace requestbody
-    @PostMapping("")
+    @PostMapping("/save")
     public ResponseEntity<Product> save(@RequestBody Product product){
         return new ResponseEntity<>(productService.save(product), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Product> delete(@PathVariable("id") int productId){
+    public ResponseEntity<Product> delete(@PathVariable("id") Integer productId){
         if (productService.delete(productId)){
             return ResponseEntity.ok().build();
         }

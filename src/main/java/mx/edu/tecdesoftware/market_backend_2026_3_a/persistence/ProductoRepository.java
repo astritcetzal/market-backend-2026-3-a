@@ -28,7 +28,7 @@ import java.util.Optional;
         /*aqui entra el mapper todo lo que esté en español es para a productos*/
         return productMapper.toProducts(productos);
     }
-    public Optional<List<Product>> getByCategory(int categoryId){
+    public Optional<List<Product>> getByCategory(Integer categoryId){
         List<Producto> productos=productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
         return Optional.of(productMapper.toProducts(productos));
     }

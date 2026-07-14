@@ -24,17 +24,17 @@ public class PurchaseController {
     @Autowired
     private PurchaseRepository purchaseRepository;
     
-    @GetMapping("")
-    public ResponseEntity<List<Purchase>> getAll(PurchaseService purchaseService){
+    @GetMapping("/all")
+    public ResponseEntity<List<Purchase>> getAll(){
         return new ResponseEntity<>(purchaseService.getAll(), HttpStatus.OK);
     }
     
-    @PostMapping("/client/{clientId}")
+    @GetMapping("/client/{clientId}")
     public ResponseEntity<Purchase> getByCliente(@PathVariable("clientId") String clientId){
         return purchaseService.getByClientId(clientId).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("")
+    @PostMapping("/save")
     public ResponseEntity<Purchase> save(@RequestBody Purchase purchase) {
         return new ResponseEntity<>(purchaseService.save(purchase),HttpStatus.CREATED);
     }

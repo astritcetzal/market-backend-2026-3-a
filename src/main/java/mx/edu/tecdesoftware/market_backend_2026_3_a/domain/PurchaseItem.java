@@ -7,16 +7,16 @@ import mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity.CompraPro
 import mx.edu.tecdesoftware.market_backend_2026_3_a.persistence.entity.Producto;
 
 public class PurchaseItem {
-    private int productId;
+    private Integer productId;
     private Integer amount;
     private Double total;
     private Boolean active;
 
-    public int getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 
